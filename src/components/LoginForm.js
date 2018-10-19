@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { TextInput } from 'react-native';
 import { Button, Card, CardSection } from './common';
 
 export default class LoginForm extends Component {
+  state = {
+    text: ''
+  }
+
   render() {
     return (
-      <View>
         <Card>
-          <CardSection />
+          <CardSection>
+            <TextInput
+              value={this.state.text}
+              onChange={text => this.setState({ text })} 
+              style={{ height: 30, width: 100 }} 
+            />
+          </CardSection>
           <CardSection />
           <CardSection>
             <Button>
@@ -15,8 +24,6 @@ export default class LoginForm extends Component {
             </Button>
           </CardSection>
         </Card>
-      </View>
-      
     );
   }
 }
