@@ -44,7 +44,7 @@ export default class LoginForm extends Component {
       return <Spinner spinnerSize='small' />;
     }
     return (
-      <Button onPress={this.onButtonPress.bind(this)}>
+      <Button onPress={this.onButtonPress.bind(this)} >
         Log In
       </Button>
     );
@@ -73,13 +73,9 @@ export default class LoginForm extends Component {
               value={this.state.password}
             />
           </CardSection>
-
-            <Text style={styles.errorStyle}>{this.state.error}</Text>
-
-          <CardSection>
-            {this.renderBtn()}
-          </CardSection>
         </Card>
+        <Text style={styles.errorStyle}>{this.state.error}</Text>
+        {this.renderBtn()}
       </View>
     );
   }
